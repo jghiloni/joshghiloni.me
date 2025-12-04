@@ -51,7 +51,7 @@ jobs:
         with:
           node-version-file: .nvmrc
       - name: Install Node.js dependencies
-        run: "[[ -f yarn.lock ]] && yarn install"
+        run: "[[ -f yarn.lock ]] && corepack enable && yarn install"
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
